@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding.recview.adapter=pageadapter
         viewModel=ViewModelProvider(this)[pageviewmodel::class.java]
         viewModel.list.observe(this){
-
+         pageadapter.submitData(lifecycle,it)
         }
     }
 }
