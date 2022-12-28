@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.suman.paginationretrofitmvvmdaggerhilt.api.QInterface
 import com.suman.paginationretrofitmvvmdaggerhilt.model.Result
 
-class paginationsource( val api: QInterface) :PagingSource<Int,com.suman.paginationretrofitmvvmdaggerhilt.model.Result>() {
+class paginationsource( val quotesapi: QInterface) :PagingSource<Int,com.suman.paginationretrofitmvvmdaggerhilt.model.Result>() {
     override fun getRefreshKey(state: PagingState<Int, Result>): Int? {
         return state.anchorPosition?.let {
             state.closestPageToPosition(it)?.prevKey?.plus(1)
@@ -17,7 +17,7 @@ class paginationsource( val api: QInterface) :PagingSource<Int,com.suman.paginat
         return try {
             val position = params.key ?: 1
 
-            val response = api.getAllQuotes(position)
+            val response = quotesapi.getAllQuotes(position)
 
             LoadResult.Page(
                 response.results,
