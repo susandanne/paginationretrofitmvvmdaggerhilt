@@ -30,7 +30,24 @@ class pageadapter:
 
   companion object {
     private  val comparator =object:
-      DiffUtil.ItemCallback<com.suman.paginationretrofitmvvmdaggerhilt.model.Result>()
+      DiffUtil.ItemCallback<com.suman.paginationretrofitmvvmdaggerhilt.model.Result>(){
+      override fun areItemsTheSame(
+        oldItem: com.suman.paginationretrofitmvvmdaggerhilt.model.Result,
+        newItem: com.suman.paginationretrofitmvvmdaggerhilt.model.Result
+      ): Boolean {
+
+          return oldItem.id==newItem.id
+
+      }
+
+      override fun areContentsTheSame(
+        oldItem: com.suman.paginationretrofitmvvmdaggerhilt.model.Result,
+        newItem: com.suman.paginationretrofitmvvmdaggerhilt.model.Result
+      ): Boolean {
+          return oldItem==newItem
+      }
+
+    }
 
   }
 }

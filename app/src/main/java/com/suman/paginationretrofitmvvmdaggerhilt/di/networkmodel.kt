@@ -1,5 +1,6 @@
 package com.suman.paginationretrofitmvvmdaggerhilt.di
 
+import com.suman.paginationretrofitmvvmdaggerhilt.Constant
 import com.suman.paginationretrofitmvvmdaggerhilt.api.QInterface
 import dagger.Module
 import dagger.Provides
@@ -17,7 +18,7 @@ class networkmodel {
 @Provides
 fun retrofitbuilder():Retrofit.Builder{
     return Retrofit.Builder()
-        .baseUrl("")
+        .baseUrl(Constant.base_url)
         .addConverterFactory(GsonConverterFactory.create())
 
     }

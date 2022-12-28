@@ -9,8 +9,9 @@ import com.suman.paginationretrofitmvvmdaggerhilt.adapter.pageadapter
 import com.suman.paginationretrofitmvvmdaggerhilt.databinding.ActivityMainBinding
 import com.suman.paginationretrofitmvvmdaggerhilt.viewmodel.pageviewmodel
 import dagger.hilt.InstallIn
+import dagger.hilt.android.AndroidEntryPoint
 
-@InstallIn
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var pageadapter: pageadapter
