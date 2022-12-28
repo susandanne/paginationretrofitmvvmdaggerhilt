@@ -1,5 +1,6 @@
 package com.suman.paginationretrofitmvvmdaggerhilt.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -13,14 +14,18 @@ class pageadapter:
   PagingDataAdapter<com.suman.paginationretrofitmvvmdaggerhilt.model.Result, pageadapter.pageviewholder >(
     comparator) {
 
-  class pageviewholder(itemView: View) : RecyclerView.ViewHolder(itemView)
+  class pageviewholder(public val binding: PagingitemBinding) : RecyclerView.ViewHolder(binding.root)
 
   override fun onBindViewHolder(holder: pageviewholder, position: Int) {
-    TODO("Not yet implemented")
+    getItem(position).let{
+//      holder.binding.quoteTv.text=
+    }
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): pageviewholder {
-    TODO("Not yet implemented")
+    return pageviewholder(
+      PagingitemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    )
   }
 
   companion object {
