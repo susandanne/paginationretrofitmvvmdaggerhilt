@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface QInterface {
 
-    @GET("/movie")
-   suspend fun getAllQuotes(@Query("popular") page: Int):ResponseRequests
+    @GET("3/movie/popular?api_key=7451480045324e970e0a3702ed6ff942")
+   suspend fun getAllQuotes(@Query("page") page: Int):ResponseRequests
 
 }

@@ -18,7 +18,7 @@ class pageadapter:
 
   override fun onBindViewHolder(holder: pageviewholder, position: Int) {
     getItem(position).let{
-      holder.binding.quoteTv.text=it?.title
+      holder.binding.quoteTv.text=it?.overview
     }
   }
 
